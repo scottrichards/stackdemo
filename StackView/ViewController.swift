@@ -9,7 +9,9 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    @IBOutlet weak var halfDome: UIImageView!
+    @IBOutlet weak var lakeImage: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -20,6 +22,11 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    @IBAction func onHalfDome(_ sender: UISwitch) {
+        UIView.animate(withDuration: 0.3) {
+            self.halfDome.isHidden = !sender.isOn
+        }
+    }
+    
 }
 
